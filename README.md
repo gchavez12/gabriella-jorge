@@ -13,10 +13,10 @@ Steps of the Git workflow:
  
 ## How to Create a Git Repository from an existing project
  
- - Navigate to your project folder using cd path/to/project
- - Initialize a Git repository with "git init"
- - Stage all files using "git add ."
- - Create first commit with "git commit -m "Initial commit""
+- Navigate to your project folder using cd path/to/project
+- Initialize a Git repository with "git init"
+- Stage all files using "git add ."
+- Create first commit with "git commit -m "Initial commit""
  
  
  
