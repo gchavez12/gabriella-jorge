@@ -1,4 +1,4 @@
-# gabriella-jorge Gabriella small change to tittle 
+# gabriella-jorge jorge changed this title
 Practice session collaborative report 
 
 ## Git Workflow
