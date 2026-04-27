@@ -2,15 +2,24 @@
 title: "lobster-report"
 format: html
 editor: visual
-authors: Gabriella Chavez and Jorge Coronado
-data: Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2022. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 8. Environmental Data Initiative. https://doi.org/10.6073/pasta/25aa371650a671bafad64dd25a39ee18 (Accessed 2026-04-27).
-link: https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8
-date_accessed: April 27th, 2026
+authors: 
+          -Gabriella Chavez 
+          -Jorge Coronado
 ---
 
-# Abstract Summary:
+# Data Citation
+
+Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2022. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 8. Environmental Data Initiative. https://doi.org/10.6073/pasta/25aa371650a671bafad64dd25a39ee18 (Accessed 2026-04-27).
+
+link: https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8
+
+date_accessed: April 27th, 2026
+
+# Abstract Summary
 
 This dataset tracks abundance, size, and fishing pressure of California spiny lobsters in the Santa Barbara Channel to study how fishing and marine protected areas affect kelp forest ecosystems. It includes annual diver surveys across multiple sites (inside and outside MPAs) and seasonal measurements of fishing activity based on trap counts.
+
+# Data Analysis
 
 ## Lobster Size Distribution Analysis
 
@@ -18,18 +27,28 @@ This analysis explores how lobster size and abundance vary across sites, which m
 
 ### Dodged bar plot showing lobster counts by site, grouped by size category
 
-![](../figs-gabriella-jorge/lobster_bar_plot.png){fig-alt="Bar plot of lobster trap counts by site and fishing pressure"}
+![](../figs-gabriella-jorge/lobster_bar_plot.png){fig-alt="Dodged bar plot showing lobster counts by site, grouped by size category" fig-alt="Dodged bar plot showing lobster counts by site, grouped by size category"}
 
 The plot shows variation in lobster size distribution across sites. Some sites have a higher proportion of larger lobsters, which could indicate lower fishing pressure or protection effects, while others are dominated by smaller individuals.
 
 ### Line plot showing lobster counts over time for multiple sites
 
-![](../figs-gabriella-jorge/lobster_dodged_bar_plot.png){fig-alt="Bar plot of lobster trap counts by site and fishing pressure"}
+![](../figs-gabriella-jorge/lobster_dodged_bar_plot.png){fig-alt="Line plot showing lobster counts over time for multiple sites" fig-alt="Line plot showing lobster counts over time for multiple sites"}
 
 Lobster abundance changes over time differ by site, suggesting that local factors such as habitat or fishing intensity may influence population trends.
 
-##
+## Temporal Trends and Fishing Pressure of Lobster Traps
 
-###
+This analysis examines how lobster trap counts vary over time and across sites, as well as differences in fishing pressure. These patterns may reflect spatial variability in fishing effort and potential impacts of management or site accessibility.
 
-###
+### Line plot showing total lobster trap counts over time across multiple sites
+
+![](../figs-gabriella-jorge/lobster_traps_plot_1.png) {fig-cap="Line plot showing temporal trends in total lobster trap counts across sites" fig-alt="Line plot of total lobster trap counts over time for multiple sites"}
+
+This figure shows temporal trends in total lobster trap counts across sites. Overall, trap counts vary considerably between sites and across years, indicating changes in fishing effort over time. Some sites exhibit increasing trends or peaks in specific years, while others remain relatively stable, suggesting spatial differences in fishing intensity and possibly site-specific management or accessibility.
+
+### Bar plot showing lobster trap counts by site, grouped by fishing pressure
+
+![](../figs-gabriella-jorge/lobster_traps_plot_2.png) {fig-cap="Bar plot showing distribution of lobster trap counts by site and fishing pressure level" fig-alt="Bar plot of lobster trap counts by site grouped into high and low fishing pressure"}
+
+This plot highlights differences in fishing pressure across sites between 2019–2021. Most sites are dominated by low fishing pressure, but a few (e.g., CARP and GOLB) show a higher proportion of high fishing pressure, indicating more intensive fishing activity in those areas. The uneven distribution suggests that fishing effort is not uniform and may be concentrated in specific locations.
