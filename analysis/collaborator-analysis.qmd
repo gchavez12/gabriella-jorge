@@ -76,7 +76,7 @@ lobster_traps_fishing_pressure <- lobster_traps %>%
     drop_na()
 
 # bar plot
-ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
+myplot1 <- ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
     geom_col() +
   labs(
     x = "site",
@@ -89,8 +89,13 @@ ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FI
     axis.text.x = element_text(angle = 90, hjust = 1)
   )
 
+myplot1
+ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_1.png"),
+       plot = myplot1,
+       width = 8, height = 6)
+
 # dodged bar plot
-ggplot(data = lobster_traps_fishing_pressure, 
+myplot2 <- ggplot(data = lobster_traps_fishing_pressure, 
        aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
   geom_col(position = "dodge") +
   labs(
@@ -103,5 +108,13 @@ ggplot(data = lobster_traps_fishing_pressure,
   theme(
     axis.text.x = element_text(angle = 90, hjust = 1)
   )
+
+myplot2
+
+ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_2.png"),
+       plot = myplot2,
+       width = 8, height = 6)
+
+
 ```
 
