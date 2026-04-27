@@ -2,4 +2,33 @@
 title: "lobster-report"
 format: html
 editor: visual
+authors: Gabriella Chavez and Jorge Coronado
+data: Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2022. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 8. Environmental Data Initiative. https://doi.org/10.6073/pasta/25aa371650a671bafad64dd25a39ee18 (Accessed 2026-04-27).
+link: https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8
+date_accessed: April 27th, 2026
 ---
+
+## Abstract Summary:
+
+This dataset tracks abundance, size, and fishing pressure of California spiny lobsters in the Santa Barbara Channel to study how fishing and marine protected areas affect kelp forest ecosystems. It includes annual diver surveys across multiple sites (inside and outside MPAs) and seasonal measurements of fishing activity based on trap counts.
+
+## Lobster Size Distribution Analysis
+
+This analysis explores how lobster size and abundance vary across sites, which may reflect differences in environmental conditions or fishing pressure.
+
+```{r}
+#| fig-alt: "Dodged bar plot showing lobster counts by site, grouped by size category"
+p2
+```
+
+The plot shows variation in lobster size distribution across sites. Some sites have a higher proportion of larger lobsters, which could indicate lower fishing pressure or protection effects, while others are dominated by smaller individuals.
+
+```{r}
+#| fig-alt: "Line plot showing lobster counts over time for multiple sites"
+ggplot(lobsters_summarize, aes(x = YEAR, y = COUNT, color = SITE)) +
+  geom_line() +
+  theme_light()
+```
+
+Lobster abundance changes over time differ by site, suggesting that local factors such as habitat or fishing intensity may influence population trends.
+
