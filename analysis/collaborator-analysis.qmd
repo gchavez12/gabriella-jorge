@@ -20,6 +20,29 @@ lobster_traps <- read_csv(here::here("data-gabriella-jorge/Lobster_Trap_Counts_A
 ```
 ```{r}
 colnames(lobster_traps)
+head(lobster_traps)
 ```
 
+```{r}
+lobster_traps <- lobster_traps %>% 
+    mutate(TRAPS = na_if(TRAPS, -99999))
+unique(lobster_traps)
+```
+
+```{r}
+not_napl <- lobster_traps %>% 
+  filter(SITE != "NAPL")
+```
+
+```{r}
+carp_20_traps <- lobster_traps %>% 
+    filter(SITE == "CARP" & TRAPS > 20)
+```
+
+```{r}
+# `group_by() %>% summarize()` practice
+max_lobster_traps <- lobster_traps %>% 
+    group_by(SITE, MONTH) %>%
+    summarize(MAX_TRAPS = max(TRAPS, na.rm = TRUE))
+```
 
