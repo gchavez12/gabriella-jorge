@@ -40,6 +40,7 @@ max_lobster <- lobster_abundance %>%
   group_by(SITE, MONTH) %>% 
   summarize(MAX_LENGTH = max(SIZE_MM, na.rm = TRUE))
 ```
+
 ## Exercise: Data Visualization
 
 ```{r}
@@ -59,8 +60,6 @@ ggplot(data = lobster_abundance,
         panel.grid.major = element_line(linetype = "dashed")
     )
 ```
-
-
 
 ```{r}
 lobsters_summarize <- lobster_abundance %>% 
@@ -123,7 +122,7 @@ lobster_size_lrg <- lobster_abundance %>%
 
 ```{r}
 # bar plot
-ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
+p1 <- ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
   geom_col(color = "black") +
   labs(
     title = "Lobster Size Distribution by Site",
@@ -138,8 +137,18 @@ ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
+p1
+
+ggsave(
+  filename = here::here("figs-gabriella-jorge", "lobster_bar_plot.png"),
+  plot = p1,
+  width = 6,
+  height = 4
+)
+
+
 # dodged bar plot
-ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
+p2 <- ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
   geom_col(position = "dodge", color = "black") +
   labs(
     title = "Lobster Size Distribution by Site",
@@ -154,5 +163,14 @@ ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   scale_fill_brewer(palette = "Set2")
-```
 
+p2
+
+ggsave(
+  filename = here::here("figs-gabriella-jorge", "lobster_dodged_bar_plot.png"),
+  plot = p2,
+  width = 6,
+  height = 4
+)
+
+```
