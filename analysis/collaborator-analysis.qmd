@@ -18,6 +18,7 @@ library(here)
 ```{r}
 lobster_traps <- read_csv(here::here("data-gabriella-jorge/Lobster_Trap_Counts_All_Years_20210519.csv"))
 ```
+
 ```{r}
 colnames(lobster_traps)
 head(lobster_traps)
@@ -44,6 +45,7 @@ max_lobster_traps <- lobster_traps %>%
     group_by(SITE, MONTH) %>%
     summarize(MAX_TRAPS = max(TRAPS, na.rm = TRUE))
 ```
+
 ## Excercise: Data Visualization
 
 ```{r}
@@ -57,16 +59,24 @@ lobsters_traps_summarize <- lobster_traps %>%
   group_by(SITE, YEAR) %>% 
   summarize(TOTAL_TRAPS = sum(TRAPS, na.rm = TRUE))
 ```
+
 ```{r}
 # line plot
 ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
     geom_line(aes(color = SITE))
 
 # line and point plot
-ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
+myplot1 <- ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
     geom_point(aes(color = SITE)) +
     geom_line(aes(color = SITE))
+
+myplot1
+
+ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_1.png"),
+       plot = myplot1,
+       width = 8, height = 6)
 ```
+
 ```{r}
 lobster_traps_fishing_pressure <- lobster_traps %>% 
     filter(YEAR %in% c(2019, 2020, 2021)) %>%
@@ -76,7 +86,7 @@ lobster_traps_fishing_pressure <- lobster_traps %>%
     drop_na()
 
 # bar plot
-myplot1 <- ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
+myplot2 <- ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
     geom_col() +
   labs(
     x = "site",
@@ -89,13 +99,13 @@ myplot1 <- ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT
     axis.text.x = element_text(angle = 90, hjust = 1)
   )
 
-myplot1
-ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_1.png"),
-       plot = myplot1,
+myplot2
+ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_2.png"),
+       plot = myplot2,
        width = 8, height = 6)
 
 # dodged bar plot
-myplot2 <- ggplot(data = lobster_traps_fishing_pressure, 
+ggplot(data = lobster_traps_fishing_pressure, 
        aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
   geom_col(position = "dodge") +
   labs(
@@ -109,12 +119,9 @@ myplot2 <- ggplot(data = lobster_traps_fishing_pressure,
     axis.text.x = element_text(angle = 90, hjust = 1)
   )
 
-myplot2
-
 ggsave(here("figs-gabriella-jorge", "lobster_traps_plot_2.png"),
        plot = myplot2,
        width = 8, height = 6)
 
 
 ```
-
