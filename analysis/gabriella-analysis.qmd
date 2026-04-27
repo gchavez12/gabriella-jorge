@@ -1,0 +1,18 @@
+---
+title: "gabriella-analysis"
+format: html
+editor: visual
+authors: Gabriella Chavez (owner), Jorge Coronado (collaborator)
+---
+
+## Exercise: Explore, Clean, and Wrangle Data
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(here)
+
+lobster_abundance <- read_csv(here::here("data-gabriella-jorge/Lobster_Abundance_All_Years_20220829.csv"))
+```
