@@ -3,7 +3,7 @@ title: "lobster-report"
 format: html
 editor: visual
 author:
-  - Gabriella Belen Chavez
+  - Gabriella B. Chavez
   - Jorge Coronado
 ---
 
