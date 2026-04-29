@@ -29,7 +29,7 @@ This analysis explores how lobster size and abundance vary across sites, which m
 
 The plot shows variation in lobster size distribution across sites. Some sites have a higher proportion of larger lobsters, which could indicate lower fishing pressure or protection effects, while others are dominated by smaller individuals.
 
-### Line plot showing lobster counts over time for multiple sites
+### Dodged bar plot showing lobster counts by site over time
 
 ![](../figs-gabriella-jorge/lobster_dodged_bar_plot.png)
 
